@@ -36,7 +36,7 @@ import java.util.UUID
 
 interface AnonymousAuthenticatorPluginConfig : Configuration {
     @DefaultBoolean(true)
-    @Description("Create a random username for each request. WHen disabled, a static username will be used.")
+    @Description("Create a random username for each request. When disabled, a static username will be used.")
     fun useRandomUserName(): Boolean
 
     @DefaultString("static-username")

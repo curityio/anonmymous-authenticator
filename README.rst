@@ -1,6 +1,12 @@
 Username Authenticator Plugin
 =============================
 
+.. image:: https://curity.io/assets/images/badges/anonymous-authenticator-quality.svg
+       :target: https://curity.io/resources/code-examples/status/
+       
+.. image:: https://curity.io/assets/images/badges/anonymous-authenticator-availability.svg
+       :target: https://curity.io/resources/code-examples/status/
+
 A Kotlin-based anonymous username authenticator plugin for the Curity Identity Server.
 
 Building the Plugin

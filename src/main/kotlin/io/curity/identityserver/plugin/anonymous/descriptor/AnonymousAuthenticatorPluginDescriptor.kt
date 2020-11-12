@@ -18,9 +18,13 @@ package io.curity.identityserver.plugin.anonymous.descriptor
 
 import io.curity.identityserver.plugin.anonymous.authentication.AnonymousAuthenticatorPluginConfig
 import io.curity.identityserver.plugin.anonymous.authentication.AnonymousAuthenticatorRequestHandler
+import se.curity.identityserver.sdk.haapi.RepresentationFunction
 import se.curity.identityserver.sdk.plugin.descriptor.AuthenticatorPluginDescriptor
+import se.curity.identityserver.sdk.plugin.descriptor.HaapiPluginDescriptor
 
-class AnonymousAuthenticatorPluginDescriptor : AuthenticatorPluginDescriptor<AnonymousAuthenticatorPluginConfig> {
+class AnonymousAuthenticatorPluginDescriptor : AuthenticatorPluginDescriptor<AnonymousAuthenticatorPluginConfig>,
+        HaapiPluginDescriptor
+{
     override fun getAuthenticationRequestHandlerTypes() =
             mapOf("index" to AnonymousAuthenticatorRequestHandler::class.java)
 
@@ -28,4 +32,7 @@ class AnonymousAuthenticatorPluginDescriptor : AuthenticatorPluginDescriptor<Ano
             AnonymousAuthenticatorPluginConfig::class.java
 
     override fun getPluginImplementationType(): String = "anonymous"
+
+    override fun getRepresentationFunctions() =
+            emptyMap<String, Class<RepresentationFunction>>()
 }

@@ -3,7 +3,7 @@ plugins {
 }
 
 group = 'io.curity.identityserver.plugin'
-version = '1.0.0'
+version = '1.1.0'
 description = 'Curity Anonymous Authenticator'
 
 sourceCompatibility = 1.8
@@ -14,12 +14,12 @@ tasks.withType(JavaCompile) {
 }
 
 repositories {
-    maven { url 'https://nexus.curity.se/nexus/content/repositories/customer-release-repo' }
+    maven { url 'https://nexus.curity.se/nexus/content/repositories/customer-snapshot-repo' }
     mavenCentral()
 }
         
 dependencies {
-    compileOnly group: 'se.curity.identityserver', name: 'identityserver.sdk', version:'4.2.1'
+    compileOnly group: 'se.curity.identityserver', name: 'identityserver.sdk', version:'5.4.0-20201106.080954-1'
     compileOnly group: 'org.slf4j', name: 'slf4j-api', version:'1.7.22'
     compileOnly group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib', version:'1.3.41'
     compileOnly group: 'org.hibernate', name: 'hibernate-validator', version:'5.1.3.Final'

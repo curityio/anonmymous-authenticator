@@ -14,12 +14,11 @@ tasks.withType(JavaCompile) {
 }
 
 repositories {
-    maven { url 'https://nexus.curity.se/nexus/content/repositories/customer-release-repo' }
     mavenCentral()
 }
         
 dependencies {
-    compileOnly group: 'se.curity.identityserver', name: 'identityserver.sdk', version:'8.0.0'
+    compileOnly group: 'se.curity.identityserver', name: 'identityserver.sdk', version:'8.2.0'
     compileOnly group: 'org.slf4j', name: 'slf4j-api', version:'2.0.3'
     compileOnly group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib-jdk8', version:'1.6.10'
 }

@@ -1,16 +1,16 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.6.10'
+    id 'org.jetbrains.kotlin.jvm' version '2.0.21'
 }
 
 group = 'io.curity.identityserver.plugin'
 version = '1.1.0'
 description = 'Curity Anonymous Authenticator'
 
-sourceCompatibility = 17
-targetCompatibility = 17
+sourceCompatibility = 21
+targetCompatibility = 21
 
-tasks.withType(JavaCompile) {
-	options.encoding = 'UTF-8'
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
 }
 
 repositories {
@@ -18,12 +18,13 @@ repositories {
 }
         
 dependencies {
-    compileOnly group: 'se.curity.identityserver', name: 'identityserver.sdk', version:'8.2.0'
-    compileOnly group: 'org.slf4j', name: 'slf4j-api', version:'2.0.3'
-    compileOnly group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib-jdk8', version:'1.6.10'
+    compileOnly group: 'se.curity.identityserver', name: 'identityserver.sdk', version:'9.5.0'
+    compileOnly group: 'org.slf4j', name: 'slf4j-api', version:'2.0.12'
+    compileOnly group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib', version:'2.1.0'
 }
 
-task dist(type: Copy, dependsOn: jar) {
+tasks.register('dist', Copy) {
+    dependsOn jar
     from configurations.runtimeClasspath
     from jar
     into "$project.buildDir/$project.name"

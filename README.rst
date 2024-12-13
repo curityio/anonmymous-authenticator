@@ -1,4 +1,4 @@
-Username Authenticator Plugin
+Anonymous Authenticator Plugin
 =============================
 
 .. image:: https://img.shields.io/badge/quality-test-yellow
